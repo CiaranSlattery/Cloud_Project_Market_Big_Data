@@ -98,7 +98,7 @@ def upload_to_cloud(pair, years):
 
     schema = [bigquery.SchemaField('Date', 'TIMESTAMP'), bigquery.SchemaField('Open', 'FLOAT'),
               bigquery.SchemaField('High', 'FLOAT'), bigquery.SchemaField('Low', 'FLOAT'),
-              bigquery.SchemaField('Close', 'FLOAT'), bigquery.SchemaField('Volume Pair', 'FLOAT'),
+              bigquery.SchemaField('Close', 'FLOAT'), bigquery.SchemaField('Volume_Pair', 'FLOAT'),
               bigquery.SchemaField('Volume', 'FLOAT'), bigquery.SchemaField('Month', 'STRING'), ]
 
     table_ref = dataset_ref.table(table_name)
@@ -125,7 +125,7 @@ def upload_to_cloud(pair, years):
         df['High'] = df['High'].astype(float)
         df['Low'] = df['Low'].astype(float)
         df['Close'] = df['Close'].astype(float)
-        df['Volume Pair'] = df['Volume Pair'].astype(float)
+        df['Volume_Pair'] = df['Volume_Pair'].astype(float)
         df['Volume'] = df['Volume'].astype(float)
         df['Month'] = df['Month'].astype(str)
 
